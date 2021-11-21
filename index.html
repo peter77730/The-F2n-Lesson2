@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Peter Chen">
+    <meta name="robots" content="index,follow">
+        <link rel="shortcut icon" href="./pic/bearLogo.svg">
+        <link rel="bookmark" href="./pic/bearLogo.svg">
+    <title>袋你去騎車</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./styles/all.css">
+</head>
+<body>
+    <div class="container">
+        <div class="searchBar">
+            <div class="searchMain">
+                <select name="地區" class="form-select" id="city" aria-label="選擇縣市"> 
+                    <option value="">地區選擇</option>
+                    <option value="Taipei">台北市</option>
+                    <option value="NewTaipei">新北市</option>
+                    <option value="Taoyuan">桃園市</option>
+                    <option value="Taichung">台中市</option>
+                    <option value="Tainan">台南市</option>
+                    <option value="Kaohsiung">高雄市</option>
+                    <option value="Keelung">基隆市</option>
+                    <option value="Hsinchu">新竹市</option>
+                    <option value="HsinchuCounty">新竹縣</option>
+                    <option value="MiaoliCounty">苗栗縣</option>
+                    <option value="ChanghuaCounty">彰化縣</option>
+                    <option value="NantouCounty">南投縣</option>
+                    <option value="YunlinCounty">雲林縣</option>
+                    <option value="ChiayiCounty">嘉義縣</option>
+                    <option value="Chiayi">嘉義市</option>
+                    <option value="PingtungCounty">屏東縣</option>
+                    <option value="YilanCounty">宜蘭縣</option>
+                    <option value="HualienCounty">花蓮縣</option>
+                    <option value="TaitungCounty">台東縣</option>
+                    <option value="KinmenCounty">金門縣</option>
+                    <option value="PenghuCounty">澎湖縣</option>
+                    <option value="LienchiangCounty">連江縣</option>
+                  </select>
+                <select class="form-select" id="area" aria-label="選擇鄉鎮"> 
+
+                </select>
+            </div>
+            <div class="checkboxMain">
+                <p class="checkboxSelect">
+                    <input type="checkbox" id="cbox1" value="單向">
+                    <label for="cbox1">單向</label>
+                  </p>
+                <p class="checkboxSelect">
+                    <input type="checkbox" id="cbox2" value="雙向">
+                    <label for="cbox2">雙向</label>
+                  </p>
+            </div> 
+            <div class="line"></div>
+            <div class="bicycleForm">
+                <!-- <div class="bicycleFormHover">
+                    <h3>中科自行車道(中科路)</h3>
+                    <h4>起點：東大路</h4>
+                    <h4>終點：科園三路北側約300米</h4>
+                    <h5>2800m</h5>      
+                </div>
+                    <div class="line"></div>           -->
+            </div>
+              
+        </div>
+        <div class="navbar">
+            <div class="navbarMain">
+                <!-- 桌版navbar -->
+                <ul class="navbarPad">
+                    <li>
+                        <a href="##">
+                            <img src="./pic/bearLogo.svg" alt="bearLogo" class="bearLogo" >
+                        </a>
+                    </li>
+                    <li id="fa-map">
+                        <a href="##">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="##">
+                            <i class="fas fa-biking fa-2x"></i>
+                        </a>
+                    </li>
+                    <li class="searchPad">
+                        <a href="##">
+                            <i class="fas fa-search fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- phone版navbar -->
+                <ul class="navbarPhone">
+                    <li class="rentBic">
+                        <a href="##">
+                            <i class="fas fa-map-marker-alt fa-2x"></i>
+                            <h2 class="navbarPhoneText">租車</h2>
+                        </a>
+                    </li>
+                    <li class="reBic">
+                        <a href="##">
+                            <i class="fab fa-product-hunt fa-2x"></i>
+                            <h2 class="navbarPhoneText">還車</h2>
+                        </a>                  
+                    </li>
+                    <li class="lineSearch">
+                        <a href="##">
+                            <i class="fas fa-biking fa-2x"></i>
+                            <h2 class="navbarPhoneText">路線搜尋</h2>
+                        </a>              
+                    </li>
+                    <li>
+                        <a href="##">
+                            <i class="fas fa-info-circle fa-2x"></i>
+                            <h2 class="navbarPhoneText">常見問題</h2>
+                        </a>  
+                    </li>           
+                </ul>
+            </div>
+            <div class="navbarQ">
+                <a href="##">
+                    <i class="fas fa-info-circle fa-2x"></i>
+                </a>      
+            </div>
+        </div>
+        
+        
+
+        <div class="mapMain">
+            <div class="cover">
+                <img src="./pic/bicycleMain.svg" alt="bicycleTraval" id="bicycleTraval">
+            </div>
+            <div class="mapid z-index" id="mapid">
+            </div>
+            <div class="navbarQNews d-none z-index">
+                <h3>常見問題</h3>
+                <p>身邊很多朋友都在有在騎自行車，常常看到他們一起出去騎車，常常看到他們一起出去騎車，常常看到他們一起出去騎車，
+                </p>
+                <h3>解決方針</h3>
+                <p>身邊很多朋友都在有在騎自行車，常常看到他們一起出去騎車，常常看到他們一起出去騎車，常常看到他們一起出去騎車，常常看到他們一起出去騎車，
+                </p>
+            </div> 
+        </div>
+
+        
+        
+
+         
+    </div>
+
+    <!-- 隱私權copyright -->
+    <div class="copyright">
+        <img src="./pic/copyright.svg" alt="copyright">
+        <p>Design by Yuco</p>
+    </div>
+
+
+      <!-- <div class="bicycleRent">
+        <div class="bicycleRentMain">
+            <div class="circle"></div>
+            <h4>正常營運</h4>
+        </div>
+        <h2>iBike1.0_逢甲大學</h2>
+        <h5>iBi ke1. 0_Feng Chia University</h5>
+        <h4>台中市福星路/逢甲路口(潮洋機車停車場)</h4>
+        <h5>Fuxing Rd & Fengjia Rd Intersection</h5>
+        <h5>更新時間：2021-11-10 22:51:37</h5>
+        <div class="bicycleRentInfo">
+            <div class="AvailableRentBikes">
+                <h2>可借車輛</h2>
+                <h1>29</h1>
+            </div>
+            <div class="AvailableReturnBikes">
+                <h2>可停車位</h2>
+                <h1>5</h1>
+            </div>
+        </div>
+    </div> -->
+
+
+  <!-- leaftlet -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- jsSHA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsSHA/3.2.0/sha.js"></script>
+  <!-- wicket -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wicket/1.3.8/wicket.min.js" integrity="sha512-aaiN+QIXD0N9Id865vSDEfttZJV9v8ZGh7jXMnYI2zbZhkSYOulS4IH0u4pC61/KXT20UedYzL5xi5siIg6mlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./all.js"></script>
+</body>
+</html>

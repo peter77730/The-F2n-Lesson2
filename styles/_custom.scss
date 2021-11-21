@@ -1,0 +1,174 @@
+.d-none {
+  display: none;
+  z-index: -1;
+}
+.d-flex {
+  display: flex;
+  z-index: 10;
+}
+.flyRight {
+  transform: translate(100%);
+}
+.circleLelt {
+  transform: scale(0);
+}
+.z-index {
+  z-index: -1;
+}
+
+//租借資訊
+.bicycleRent {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: flex-start;
+  // width: 328px;
+  // height: 320px;
+  // border-radius: 10px;
+  // padding: 24px;
+  background-color: #fff;
+  // border: 1px solid black;
+  // box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  .bicycleRentMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 12px;
+    .circle {
+      margin: 0 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $primary;
+    }
+  }
+  h5 {
+    margin-bottom: 12px;
+  }
+  .bicycleRentInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0px 12;
+    .AvailableRentBikes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      width: 131px;
+      height: 112px;
+      background-color: $primary;
+      margin: 0 8px;
+      h2 {
+        padding-bottom: 8px;
+      }
+    }
+    .AvailableReturnBikes {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      width: 131px;
+      height: 112px;
+      background-color: $secondary;
+      margin: 0 8px;
+      h2 {
+        color: #fff;
+        padding-bottom: 8px;
+      }
+      h1 {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.searchBar {
+  padding-left: 90px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: -321px;
+  width: 321px;
+  height: 100%;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  @include phone {
+    padding-left: 12px;
+  }
+  .searchMain {
+    margin: 12px 0;
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    .form-select {
+      margin: 8px;
+      display: flex;
+      width: 137px;
+      height: 42px;
+      font-size: 14px;
+      color: #a6a6a6;
+      font-weight: 500;
+      border-radius: 12px;
+    }
+  }
+  .checkboxMain {
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    .checkboxSelect {
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      font-size: 14px;
+      color: #a6a6a6;
+      font-weight: 500;
+      input {
+        font-size: 14px;
+        margin: 8px;
+        border-radius: 8px;
+      }
+      label {
+        font-size: 14px;
+        border-radius: 8px;
+      }
+    }
+  }
+  .line {
+    margin: 8px 0;
+    width: 90%;
+    height: 1px;
+    border-bottom: 1px solid $secondary;
+  }
+  .bicycleForm {
+    width: 90%;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    .bicycleFormHover {
+      &:hover {
+        cursor: pointer;
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+.searchBarTransform {
+  padding-right: 12px;
+  overflow: auto;
+  flex-direction: row;
+  z-index: 3;
+  transform: translateX(321px);
+}

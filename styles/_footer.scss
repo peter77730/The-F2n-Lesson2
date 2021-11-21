@@ -1,0 +1,58 @@
+//手機板navbar
+.navbarPhone {
+  display: none;
+  @include phone {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0, 5px;
+  }
+  li {
+    background-color: $neutralLightest;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 8px 5px;
+    &:hover {
+      background-color: $neutralDarkest;
+    }
+    a {
+      i {
+        padding-left: 20px;
+        &:hover {
+          color: $neutralLightest;
+        }
+      }
+      .navbarPhoneText {
+        text-align: center;
+        padding: 2px 20px;
+        display: block;
+        font-size: 12px;
+        font-family: $fontC;
+      }
+    }
+  }
+}
+
+//copyright
+.copyright {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 20px 0;
+  background-color: $secondary;
+  img {
+    width: 20px;
+    height: 20px;
+    padding: 0 20px;
+  }
+  p {
+    font-size: 14px;
+    font-family: $fontE;
+    color: $neutralLightest;
+  }
+}

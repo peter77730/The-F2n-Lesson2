@@ -1,0 +1,107 @@
+// 主內容
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  .navbar {
+    overflow: hidden;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    width: 75px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $neutralLightest;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 5px 0px 3px rgba(0, 0, 0, 0.7);
+    @include phone {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 75px;
+      top: 100%;
+      transform: translate(0%, -100%);
+    }
+    .navbarMain {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .navbarPad {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        @include phone {
+          display: none;
+        }
+        li {
+          background-color: $neutralLightest;
+          padding: 30px;
+          &:hover {
+            background-color: $neutralDarkest;
+          }
+          a {
+            .bearLogo {
+              &:hover {
+                color: $neutralLightest;
+              }
+            }
+          }
+          i {
+            &:hover {
+              color: $neutralLightest;
+            }
+          }
+        }
+      }
+    }
+    .navbarQ {
+      display: flex;
+      background-color: $neutralLightest;
+      padding: 25px;
+      &:hover {
+        background-color: $neutralDarkest;
+      }
+      @include phone {
+        display: none;
+      }
+      a {
+        i {
+          &:hover {
+            background-color: $neutralDarkest;
+            color: $neutralLightest;
+          }
+        }
+      }
+    }
+  }
+  .startLogo {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+//icon微調
+#fa-map {
+  font-size: 26px;
+  padding: 18px 25px;
+}

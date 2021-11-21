@@ -1,0 +1,79 @@
+//圖資
+.mapMain {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .cover {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    img {
+      object-fit: cover;
+      object-position: center center;
+      // position: absolute;
+      @include pad {
+        width: 230px;
+      }
+    }
+  }
+  .mapid {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100vh;
+    width: 94vw;
+    @include pad {
+      width: 88vw;
+    }
+    @include phone {
+      top: 0px;
+      right: 0px;
+      height: 88vh;
+      width: 100vw;
+    }
+  }
+  //資訊欄
+  .navbarQNews {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    width: 80%;
+    height: 80vh;
+    background-color: $neutralLight;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.7);
+    padding: 16px;
+    @include pad {
+      width: 60%;
+      height: 60vh;
+    }
+    @include phone {
+      width: 60%;
+      height: 60vh;
+    }
+    h3 {
+      font-family: $fontC;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 3rem;
+    }
+    p {
+      font-family: $fontC;
+      font-size: 16px;
+      line-height: 1.5rem;
+    }
+  }
+}
